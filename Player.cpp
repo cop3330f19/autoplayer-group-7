@@ -1,3 +1,11 @@
+/*********************************************************************
+    Player.cpp
+    Group 7: Jonathan Burt, Markee Davis, Alex Soler, Trevor Taylor
+    Date Last Edited: December 5th, 2019
+    Purpose: Main program. Creates Playlist and song objects to be used
+            by the autoplayer. Also provides options for the user to do with 
+            as they please with the playlists provided or created.
+********************************************************************/
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -8,14 +16,13 @@
 #include "Playlist.h"
 using namespace std;
 
-void playlistMenu(ifstream&, ofstream&, int, string, Playlist&, Song&, vector<string>, string, string);
-
 //driver menu of program
 int main()
 {
     
     int decision, decision2;
     string decision3;
+    //Print the header
     cout << endl << setfill('-') << setw(10) << "" << "WELCOME to the AutoPlayer" << setw(10) << "" << endl;
     vector<string> names;
     string temp;
@@ -586,7 +593,7 @@ int main()
         test8.clearList();
         
         
-    }while (decision != 3);
+    }while (decision != 3); //End the program if the user enters a 3 which is quit, otherwise continue 
 
 
     return 0;

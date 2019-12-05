@@ -1,3 +1,9 @@
+/*********************************************************************
+    Song.cpp
+    Group 7: Jonathan Burt, Markee Davis, Alex Soler, Trevor Taylor
+    Date Last Edited: December 5th, 2019
+    Purpose: Defines the song class and defines its functions
+********************************************************************/
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -13,6 +19,13 @@ Song::Song()
 
 }
 
+/**************************************************************
+	 *                 Song constructor                           *
+	 *                                                            *
+	 * Passed   : 5 arguments: 3 strings, 2 ints                  *
+	 * Purpose  : Creates song object with data                   *
+	 * Returns  : Song object                                     *
+	 **************************************************************/
 Song::Song(string title, string artist, string album, int length, int year)
 {
     this -> title = title;
@@ -111,6 +124,13 @@ bool operator==(const Song& lhs, const Song& rhs)
 
 }
 
+/**************************************************************
+	 *                           set                              *
+	 *                                                            *
+	 * Passed   : 5 arguments: 3 strings, 2 ints                  *
+	 * Purpose  : Sets song object data                           *
+	 * Returns  : Nothing                                         *
+	 **************************************************************/
 void Song::set(string title, string artist, string album, int length, int year)
 {
     this -> title = title;

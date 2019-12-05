@@ -1,3 +1,10 @@
+/*********************************************************************
+    Playlist.cpp
+    Group 7: Jonathan Burt, Markee Davis, Alex Soler, Trevor Taylor
+    Date Last Edited: December 5th, 2019
+    Purpose: Defines the Playlist class and defines its functions
+********************************************************************/
+
 #include "Playlist.h"
 #include "StringHelper.h"
 #include "Song.h"
@@ -9,31 +16,60 @@
 
 using namespace std;
 
+//default constructor
 Playlist::Playlist()
 {
     
 }
 
+//declare static variables
 string Playlist::mode = "N";
 int Playlist::playCnt = 0;
 
-
+/**************************************************************
+	 *                       setMode                              *
+	 *                                                            *
+	 * Passed   : 1 argument: String                              *
+	 * Purpose  : Changes the mode of the player                  *
+	 * Returns  : none                                            *
+	 **************************************************************/
 void Playlist::setMode(string m)
 {
     mode = m;
 }
 
+/**************************************************************
+*                       addSong                              *
+*                                                            *
+* Passed   : 1 argument: Song object                         *
+* Purpose  : Adds song to the Playlist object                *
+* Returns  : none                                            *
+**************************************************************/
 void Playlist::addSong(Song h)
 {
     songList.push_back(h);
     
 }
 
+/**************************************************************
+	 *                       setMode                              *
+	 *                                                            *
+	 * Passed   : 1 argument: String                              *
+	 * Purpose  : Changes the mode of the player                  *
+	 * Returns  : none                                            *
+	 **************************************************************/
 void Playlist::clearList()
 {
     songList.clear();
 }
 
+/**************************************************************
+	 *                       deleteSong                           *
+	 *                                                            *
+	 * Passed   : 1 argument: Song object                         *
+	 * Purpose  : Deletes song from the Playlist object           *
+	 * Returns  : none                                            *
+	 **************************************************************/
 void Playlist::deleteSong(Song h)
 {
     int i = 0;
@@ -57,7 +93,6 @@ void Playlist::deleteSong(Song h)
         
         i++; //increment counter AFTER everything has occurred
     }
-    cout << "YEP THIS HAPPEN" << endl;
     
     if(dank == true)//if dank is true or false print these messages
     {
@@ -69,6 +104,13 @@ void Playlist::deleteSong(Song h)
     }
 }
 
+/**************************************************************
+	 *                       play                                 *
+	 *                                                            *
+	 * Passed   : 0 argument: none                                *
+	 * Purpose  : Plays a song from the Playlist object           *
+	 * Returns  : none                                            *
+	 **************************************************************/
 void Playlist::play()
 {
     if(mode == "N")//Normal mode
@@ -118,6 +160,13 @@ void Playlist::play()
     }
 }
 
+/**************************************************************
+	 *                       Playlist intersect                   *
+	 *                                                            *
+	 * Passed   : 1 argument: Playlist object                     *
+	 * Purpose  : Intersects two Playlist objects                 *
+	 * Returns  : Playlist Object                                 *
+	 **************************************************************/
 Playlist Playlist::intersect(Playlist &h)
 {
     bool searched;
@@ -130,7 +179,7 @@ Playlist Playlist::intersect(Playlist &h)
         j = 0;
         while(j < songList.size())
         {
-            if(songList[i] == h.songList[j])
+            if(songList[i] == h.songList[j]) //check if the songs are the same
             {
                 searched = true; //the song was found in both playlists   
                 n.songList.push_back(songList[i]);

@@ -1,3 +1,10 @@
+/*********************************************************************
+    Song.h
+    Group 7: Jonathan Burt, Markee Davis, Alex Soler, Trevor Taylor
+    Date Last Edited: December 5th, 2019
+    Purpose: Creates the song class and declares its functions
+
+********************************************************************/
 #ifndef SONG_H
 #define SONG_H
 
