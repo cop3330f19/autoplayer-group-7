@@ -58,9 +58,9 @@ ofstream & operator<<(ofstream& os, const Song& song)
 	 **************************************************************/
 ostream & operator<<(ostream& os, const Song& song)
 {
-    os << song.title << endl << song.artist << endl << song.album << " (" << song.year << ")" << endl;
+    os << song.title << endl <<  song.artist << endl << song.album << " (" << song.year << ")" << endl;
     os << "Play Time: " << (song.length/60) << ":" << setfill('0') << setw(2) << (song.length%60) << endl;
-    return os;
+    return os:
 }
 
 /**************************************************************
